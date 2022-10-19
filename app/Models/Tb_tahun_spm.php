@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Tb_tahun_spm extends Model
+{
+    use HasFactory;
+    // use SoftDeletes;
+
+    protected $guarded = ['id'];
+    // protected $dates = ['deleted_at'];
+    public $timestamps = true;
+
+    public function spm()
+    {
+        return $this->belongsTo(Tb_spm::class, 'id_spm');
+    }
+}
